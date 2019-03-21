@@ -1,6 +1,6 @@
 ## litehtmltopng (litehtml engine)
 
-**litehtmltopng** is simple html render to png image designed to test the [litehtml HTML rendering engine](https://github.com/tordex/litehtml)
+**litehtmltopng** is simple html render to png image designed to helper the [litehtml HTML rendering engine](https://github.com/tordex/litehtml)
 used fork [litehtml C++98 / freetype branch](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented \litehtml\containers\cairo_ft 
 this cairo_ft container allows minimal dependencies for platforms Windows, Linux Embedded, Android and other.
 
