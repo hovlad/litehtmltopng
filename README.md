@@ -24,6 +24,7 @@ Used [litehtmlcpp98](https://github.com/hovlad/litehtmlcpp98) because while in f
 
 ### Download binaries
 
+You can download the binary files from 
 [freetype](https://github.com/ubawurinna/freetype-windows-binaries) 
 [cairo](https://github.com/preshing/cairo-windows/releases)
 
