@@ -16,7 +16,7 @@ You can build litehtmltopng with Vinsual Studio 2008 and newer. **Note**: this p
 
 Please be sure the submodules are fetched, or download them from github and copy into libs subfolder.
 
-* itehtmlcpp98 and litehtmltopng should be compiled with define LITEHTML_UTF8
+* litehtmlcpp98 and litehtmltopng should be compiled with define LITEHTML_UTF8 for all platforms
 
 ### Why fork litehtml?
 
