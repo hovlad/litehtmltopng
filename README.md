@@ -21,7 +21,6 @@ Please be sure the submodules are fetched, or download them from github and copy
 
 ### Download binaries
 
-You can download the binary files from:
 [freetype](https://github.com/ubawurinna/freetype-windows-binaries) 
 [cairo](https://github.com/preshing/cairo-windows/releases)
 
