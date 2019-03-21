@@ -14,7 +14,7 @@ You can build litehtmltopng with Vinsual Studio 2008 and newer. **Note**: this p
 
   * [freetype](https://github.com/aseprite/freetype2) - used to draw fonts
   * [cairo](https://github.com/tordex/cairo) - 2D graphics library
-  * [litehtml](bases https://github.com/tordex/litehtml but used fork https://github.com/hovlad/litehtmlcpp98 just because cairo_ft) - html rendering engine
+  * [fork litehtml](https://github.com/hovlad/litehtmlcpp98) - html rendering engine
 
 Please be sure the submodules are fetched, or download them from github and copy into libs subfolder.
 
