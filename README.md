@@ -2,9 +2,6 @@
 
 **litehtmltopng** is simple html render to png image designed to helper the [litehtml HTML rendering engine](https://github.com/tordex/litehtml)
 
-Used fork [litehtml C++98 / freetype fork](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented \litehtml\containers\cairo_ft 
-this cairo_ft container allows minimal dependencies for platforms Windows, Linux Embedded, Android and other.
-
 Also demonstrated:
   * cairo work with freetype
   * cairo scaling pictures
@@ -15,9 +12,14 @@ You can build litehtmltopng with Vinsual Studio 2008 and newer. **Note**: this p
 
   * [freetype](https://github.com/aseprite/freetype2) - used to draw fonts
   * [cairo](https://github.com/tordex/cairo) - 2D graphics library
-  * [fork litehtml](https://github.com/hovlad/litehtmlcpp98) - html rendering engine
+  * [fork litehtml](https://github.com/hovlad/litehtmlcpp98) - HTML rendering engine
 
 Please be sure the submodules are fetched, or download them from github and copy into libs subfolder.
+
+### Why fork litehtml?
+
+Used fork [litehtml C++98 / freetype fork](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented \litehtml\containers\cairo_ft 
+this cairo_ft container allows minimal dependencies for platforms Windows, Linux Embedded, Android and other.
 
 ### Download binaries
 
