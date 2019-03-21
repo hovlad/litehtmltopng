@@ -29,7 +29,7 @@ Used [litehtmlcpp98](https://github.com/hovlad/litehtmlcpp98) because while in f
 
 ### Using litehtmltopng
 
-Before running litehtmltopng copy the files freetype.dll (from libs\freetype) cairo.dll (from libs\cairo) and litehtml.dll (libs\litehtml) into the same folder where litehtmltopng.exe is.
+Before running litehtmltopng copy the files freetype.dll (from libs\freetype) cairo.dll (from libs\cairo) and litehtml.dll (libs\litehtml) into the same folder where litehtmltopng.exe .
 
 ### Additionally
 
