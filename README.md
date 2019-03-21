@@ -40,5 +40,5 @@ Before running litehtmltopng copy the files freetype.dll (from libs\freetype) ca
   * [An example of Cairo and FreeType in C](https://www.lemoda.net/c/free-type/index.html)
   * [cairo doc](https://www.cairographics.org/documentation)
   * [cairo samples](https://www.cairographics.org/samples)
-  * [graficheskaya-biblioteka-cairo.html](https://progtips.ru/texnologii-programmirovaniya/graficheskaya-biblioteka-cairo.html)
+  * [graficheskaya-biblioteka-cairo](https://progtips.ru/texnologii-programmirovaniya/graficheskaya-biblioteka-cairo.html)
   * [cairo tutorial](http://www.opennet.ru/docs/RUS/tutorial_cairo)
