@@ -1,6 +1,6 @@
 ## litehtmltopng (litehtml engine)
 
-**litehtmltopng** is simple html render to png image designed to helper the [litehtml HTML rendering engine](https://github.com/tordex/litehtml)
+**litehtmltopng** is simple html render to png image designed to helper the [litehtml HTML rendering engine](https://github.com/tordex/litehtml).
 
 Also demonstrated:
   * cairo work with freetype
@@ -35,10 +35,9 @@ Before running litehtmltopng copy the files freetype.dll (from libs\freetype) ca
   * litehtml should be compiled with define LITEHTML_UTF8
   
 ### Reference links
-	* litehtml wiki: https://github.com/litehtml/litehtml/wiki/How-to-use-litehtml
-	* demo cairo and fretype from https://www.lemoda.net/c/free-type/index.html "An example of Cairo and FreeType in C"
-	* demo cairo scaling pictures:
-https://www.cairographics.org/documentation/
-https://www.cairographics.org/samples/
-https://progtips.ru/texnologii-programmirovaniya/graficheskaya-biblioteka-cairo.html
-http://www.opennet.ru/docs/RUS/tutorial_cairo/
+	* [litehtml wiki](https://github.com/litehtml/litehtml/wiki/How-to-use-litehtml)
+	* [An example of Cairo and FreeType in C](https://www.lemoda.net/c/free-type/index.html)
+	* [cairo doc](https://www.cairographics.org/documentation)
+	* [cairo samples](https://www.cairographics.org/samples)
+	* [graficheskaya-biblioteka-cairo.html](https://progtips.ru/texnologii-programmirovaniya/graficheskaya-biblioteka-cairo.html)
+	* [cairo tutorial](http://www.opennet.ru/docs/RUS/tutorial_cairo)
