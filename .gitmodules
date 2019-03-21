@@ -1,0 +1,9 @@
+[submodule "libs/cairo"]
+	path = libs/cairo
+	url = git@github.com:tordex/cairo.git
+[submodule "libs/freeimage"]
+	path = libs/freeimage
+	url = git@github.com:aseprite/freetype2.git
+[submodule "libs/litehtml"]
+	path = libs/litehtml
+	url = git@github.com:hovladislav/litehtml
