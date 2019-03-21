@@ -18,7 +18,7 @@ Please be sure the submodules are fetched, or download them from github and copy
 
 ### Why fork litehtml?
 
-Used [litehtmlcpp98](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented new [cairo_f container](https://github.com/hovlad/litehtmlcpp98/tree/master/containers/cairo_ft) allows minimal dependencies for platforms Windows, Linux Embedded, Android and other.
+Used [litehtmlcpp98](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented [cairo_f container](https://github.com/hovlad/litehtmlcpp98/tree/master/containers/cairo_ft) allows minimal commons dependencies for platforms Windows, Linux Embedded, Android and other.
 
 ### Download binaries
 
