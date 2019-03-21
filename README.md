@@ -34,7 +34,7 @@ Before running litehtmltopng copy the files freetype.dll (from libs\freetype) ca
 
 ### Additionally
 
-  * basis of the project https://github.com/litehtml/litebrowser
+  Basis of the project https://github.com/litehtml/litebrowser
   
 ### Reference links
 
