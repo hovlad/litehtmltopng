@@ -1,7 +1,8 @@
 ## litehtmltopng (litehtml engine)
 
 **litehtmltopng** is simple html render to png image designed to helper the [litehtml HTML rendering engine](https://github.com/tordex/litehtml)
-used fork [litehtml C++98 / freetype fork](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented \litehtml\containers\cairo_ft 
+
+Used fork [litehtml C++98 / freetype fork](https://github.com/hovlad/litehtmlcpp98) because while in fork implemented \litehtml\containers\cairo_ft 
 this cairo_ft container allows minimal dependencies for platforms Windows, Linux Embedded, Android and other.
 
 Also demonstrated:
@@ -21,9 +22,8 @@ Please be sure the submodules are fetched, or download them from github and copy
 ### Download binaries
 
 You can download the binary files from:
-[github.com] (https://github.com/ubawurinna/freetype-windows-binaries) 
-[litehtml.com](http://www.litehtml.com)
-
+[freetype](https://github.com/ubawurinna/freetype-windows-binaries) 
+[cairo](https://github.com/preshing/cairo-windows/releases)
 
 ### Using litehtmltopng
 
