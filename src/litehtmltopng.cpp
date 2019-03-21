@@ -1,7 +1,7 @@
 // litehtmltopng.cpp : Defines the entry point for the console application.
 //
 #include "stdafx.h"
-#include <boost/shared_ptr.hpp>
+#include <memory>
 // Cairo is a 2D graphics library with support for multiple output devices
 #include <cairo.h>
 // Cairo document_container by https://github.com/litehtml/litehtml/wiki/document_container
@@ -52,12 +52,12 @@ private:
 	//caption is text from <head><title>text</title></head>
 	virtual	void set_caption(const litehtml::tchar_t* caption)
 	{
-		fprintf(stderr, "set_caption is not implemented");
+		fprintf(stderr, "set_caption is not implemented\n");
 	}
 
 	virtual	void set_base_url(const litehtml::tchar_t* base_url)
 	{
-		fprintf(stderr, "set_base_url is not implemented");
+		fprintf(stderr, "set_base_url is not implemented\n");
 	}
 
 	void import_css(litehtml::tstring& text, const litehtml::tstring& url, litehtml::tstring& baseurl)
@@ -74,12 +74,12 @@ private:
 
 	virtual	void on_anchor_click(const litehtml::tchar_t* url, const litehtml::element::ptr& el)
 	{
-		fprintf(stderr, "on_anchor_click is not implemented");
+		fprintf(stderr, "on_anchor_click is not implemented\n");
 	}
 
 	virtual	void set_cursor(const litehtml::tchar_t* cursor)
 	{
-		fprintf(stderr, "set_cursor is not implemented");
+		fprintf(stderr, "set_cursor is not implemented\n");
 	}
 };
 
@@ -98,7 +98,7 @@ private:
 	}
 
 	virtual std::string path_root_resources() const {
-		return "";
+		return "html/";
 	}
 };
 
@@ -163,7 +163,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	cairo_set_source_surface(cr, image, 0, 0);
 	cairo_paint(cr);
 	cairo_restore(cr);
-	cairo_surface_write_to_png(cairo_out_surface, "out-scale.png");
+	cairo_surface_write_to_png(cairo_out_surface, "out-resize.png");
 	cairo_surface_destroy(image);
 }
 
@@ -173,11 +173,15 @@ int _tmain(int argc, _TCHAR* argv[])
 	//const std::string html_text = "<h1>Something work 2!!!</h1>";
 	std::ifstream t1("html/some.html");
 	const std::string html_text((std::istreambuf_iterator<char>(t1)), std::istreambuf_iterator<char>());
-	typedef boost::shared_ptr<litehtml::document_container>	document_container_ptr;
+	typedef std::shared_ptr<litehtml::document_container>	document_container_ptr;
 	document_container_ptr container;//need removed after doc
 	container.reset(new spec_device_container());
 	litehtml::context ctx;
 	std::ifstream t2("html/master.css");
+	if (!t2.is_open()) {
+		fprintf(stderr, "Error opening html/master.css\n");
+		exit(EXIT_FAILURE);
+	}
 	const std::string css((std::istreambuf_iterator<char>(t2)), std::istreambuf_iterator<char>());
 	ctx.load_master_stylesheet(css.data());
 	//EnterCriticalSection(&m_sync);

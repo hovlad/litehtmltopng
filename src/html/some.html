@@ -3,17 +3,27 @@
 <title>Title string</title> 
  <style>
 	.center_img {
-	  display: block;
-	  margin: 0 auto;
+	display: block;
+	margin: 0 auto;
 	} 
-  </style>
-  <link href="external.css" rel="stylesheet">
+	table {
+	border: 0px; /* Frame around the table */ 
+	width: 100%; /* Table width */ 
+	border-spacing: 0px 0px; /* Cell spacing */ 
+	}
+	td {
+	padding: 0px; /* Fields around text */ 
+	border: 0px; /* Border around cells */ 
+	}
+ </style>
+ <!-- no exists external.css -->
+ <link href="external.css" rel="stylesheet">
 </head> 
 <body> 
 <p>Text defore image</p>
-<img class="center_img" src="image.png" width="3%">
-<img class="center_img" src="image.png" width="5%">
 <img class="center_img" src="image.png" width="10%">
+<img class="center_img" src="image.png" width="25%">
+<img class="center_img" src="image.png" width="50%">
 <P>Text after image</P> 
 <H1>Text H1</H1>  
 <P align="center">Center message</P> 
@@ -23,7 +33,7 @@
 <td align="right">value1</td>
 </tr>
 <tr> 
-<td>Field3:</td>
+<td>Field2:</td>
 <td align="right">value2</td>
 </tr>
 </table>
