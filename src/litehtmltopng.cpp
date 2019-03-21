@@ -98,11 +98,9 @@ private:
 	}
 
 	virtual std::string path_root_resources() const {
-		return "D:\\Repos\\ReceiptTemplate\\";
+		return "";
 	}
 };
-
-//CRITICAL_SECTION cairo_font::m_sync;
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -111,8 +109,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		const int size = 200;
 		cairo_surface_t* cairo_out_surface = cairo_image_surface_create(CAIRO_FORMAT_ARGB32, size, size);
 		cairo_t* c = cairo_create(cairo_out_surface);
-		const char * filename =
-			"D:\\Repos\\ReceiptTemplate\\litehtml\\arial.ttf";
+		const char * filename = "html/arial.ttf";
 		FT_Library ft_library;
 		{
 			const FT_Error ft_status = FT_Init_FreeType(&ft_library);
@@ -180,7 +177,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	document_container_ptr container;//need removed after doc
 	container.reset(new spec_device_container());
 	litehtml::context ctx;
-	std::ifstream t2("D:\\Repos\\ReceiptTemplate\\master.css");
+	std::ifstream t2("html/master.css");
 	const std::string css((std::istreambuf_iterator<char>(t2)), std::istreambuf_iterator<char>());
 	ctx.load_master_stylesheet(css.data());
 	//EnterCriticalSection(&m_sync);
