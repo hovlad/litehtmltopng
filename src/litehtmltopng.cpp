@@ -217,6 +217,97 @@ int _tmain(int argc, _TCHAR* argv[])
 		cairo_destroy(cr);
 		cairo_surface_destroy(surface);
 	}
+
+
+	{
+		// Demo Rendering to memory buffers
+		const int w_new_size_px = 5;
+		const int h_new_size_px = 4;
+		cairo_surface_t *image = cairo_image_surface_create_from_png("chess_x5_y4_24bit.png");//monochrome chess field 5x4 24 bit. Created in paint.net
+		//cairo_surface_t *image = cairo_image_surface_create_from_png("chess_x5_y4_32bit.png");//monochrome chess field 5x4 32 bit. Created in paint.net
+		cairo_status_t status = cairo_surface_status(image);
+		if (CAIRO_STATUS_SUCCESS == status) {
+			TRACE_DEBUG("reading chess_5x4.png is success");
+		}
+		else {
+			TRACE_DEBUG("reading chess_5x4.png is fail");
+			return;
+		}
+		cairo_surface_flush(image);//see cairo manual https://cairographics.org/manual/cairo-Image-Surfaces.html
+		unsigned char * surface_data = cairo_image_surface_get_data(image);
+		const cairo_format_t surface_format = cairo_image_surface_get_format(image);
+		const int surface_width = cairo_image_surface_get_width(image);// return 5
+		const int surface_height = cairo_image_surface_get_height(image);// return 4
+		const int surface_stride = cairo_image_surface_get_stride(image);// return 20
+
+//#define DEMO_PRINT_BYTES
+#ifdef DEMO_PRINT_BYTES
+		{
+			const int pixel_size = 24;
+			const int line = 0;
+			const int column = 0;
+			const unsigned char *row = surface_data + line;
+			for (int i = 0; i < 20; i++) {
+				const unsigned char * pixel = row + column * pixel_size;
+				pixel = pixel + i;
+				LOGS_DEBUG(LOGS_STREAM << "pixel point: " << (int)pixel);
+				LOGS_DEBUG(LOGS_STREAM << "pixel: " << (int)*pixel);
+			}
+		}
+#endif
+		struct Printing_result {
+			enum Type {
+				OtherError,
+				ImageFormatNotSupported,
+				Success
+			};
+		};
+		Printing_result::Type printing_result = Printing_result::OtherError;
+		// USHORT CTOS_PrinterLogo(BYTE*baLogo, USHORT usXstart, USHORT usXsize, USHORT usY8Size);
+		// Description Print out a pattern.
+		// Parameters[IN] baLogo Buffer storing the pattern to print.
+		// [IN] usXstart Horizontal position to start to print.Range from 0~383.
+		// [IN] usXsize Horizontal size of the pattern in dot.
+		// [IN] usY8Size Vertical size of the pattern in byte.
+		const unsigned char * surface_pixel_pointer = surface_data;
+		for (int line = 0; line < surface_height; ++line) {
+			const unsigned char *row = surface_data + line * surface_stride;
+			for (int column = 0; column < surface_width; ++column) {
+				bool is_black_pixel = false;
+				switch (surface_format)
+				{
+					case CAIRO_FORMAT_ARGB32:
+					{
+						const unsigned char * pixel = row + column * 4;
+						const unsigned char color_B = *(pixel + 0);
+						const unsigned char color_G = *(pixel + 1);
+						const unsigned char color_R = *(pixel + 2);
+						const unsigned char color_A = *(pixel + 3);
+						is_black_pixel = color_R > (255 / 2);//threshold by red
+							break;
+					}
+					case CAIRO_FORMAT_RGB24:
+					{
+						const unsigned char * pixel = row + column * 4;
+						const unsigned char color_B = *(pixel + 0);
+						const unsigned char color_G = *(pixel + 1);
+						const unsigned char color_R = *(pixel + 2);
+						is_black_pixel = color_R > (255 / 2);//threshold by red
+						break;
+					}
+					case CAIRO_FORMAT_INVALID:
+					case CAIRO_FORMAT_A8://unsupported photoshod and paint.net
+					case CAIRO_FORMAT_A1:
+					case CAIRO_FORMAT_RGB16_565:
+					case CAIRO_FORMAT_RGB30:
+					default:
+						printing_result = Printing_result::ImageFormatNotSupported;
+						break;
+				}
+				std::out << "x: " << column << " " << "y: " << line << " " << "is_black: " << is_black_pixel << std::endl;
+			}
+		}
+	}
 	return 0;
 }
 
