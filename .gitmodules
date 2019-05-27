@@ -4,6 +4,6 @@
 [submodule "libs/freeimage"]
 	path = libs/freeimage
 	url = git@github.com:aseprite/freetype2.git
-[submodule "libs/litehtml"]
-	path = libs/litehtml
-	url = git@github.com:hovladislav/litehtml
+[submodule "libs/litehtmlcpp98"]
+	path = libs/litehtmlcpp98
+	url = git@github.com:hovlad/litehtmlcpp98.git

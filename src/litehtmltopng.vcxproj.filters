@@ -24,12 +24,18 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\libs\litehtmlcpp98\containers\cairo_ft\container_cairo_ft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="litehtmltopng.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libs\litehtmlcpp98\containers\cairo_ft\container_cairo_ft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
